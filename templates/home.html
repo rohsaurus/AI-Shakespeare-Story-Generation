@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Powered Story Generation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+    body{
+    background-color: beige;
+}
+</style>
+
+</head>
+
+
+<script>
+
+function myFunction() {
+let text1= $('#text1').val();
+let text2= $('#text2').val();
+  $.ajax({
+              url: "/join",
+              type: "POST",
+              data: {text1:text1 }
+
+          }).done(function(response) {
+
+            var html= "<br><br><br><p> <b> RESULT : <b><p>";
+
+            response =response.result;
+                 $.each(response,function(key,val){
+                 console.log(val);
+                    html+="<p>"+val+"<p>"
+
+                });
+                html +="<br>";
+                $(".show-data").append(html);
+            });
+};
+
+  </script>
+<body>
+    <p>
+        Insert your sentence to convert to morse code here. Note that spaces will be replaced with a '|'.<br><br>
+
+            Text <label for="text1"></label><input type="text" id="text1" name="text1"><br><br>
+            <!-- Text_Value2<input type="text" id="text2" name="text2"><br><br> -->
+            <button id="clicked" onclick="myFunction()">Submit</button>
+        </p>
+    <div class="show-data" >
+
+    </div>
+</body>
+</html>
