@@ -1,6 +1,5 @@
 import requests
 #from text_to_speech import speak
-#speak("Dick and Jake's", "en", save=True, file="Hello-World.mp3", speak=True)
 
 while True:
     userInput = input("Enter some starter text here for the model to generate the rest of the story\n")
@@ -15,5 +14,4 @@ while True:
     )
     print("\n\n\n\n")
     print(r.json()['output'])
-    #speak(r.json()['output'], "en", save=True, file="Hello-World.mp3", speak=True)
     print("\n\n\n\n")
