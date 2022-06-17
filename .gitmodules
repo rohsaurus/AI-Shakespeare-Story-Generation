@@ -1,0 +1,3 @@
+[submodule "openaiExample/openai-quickstart-python"]
+	path = openaiExample/openai-quickstart-python
+	url = https://github.com/openai/openai-quickstart-python
