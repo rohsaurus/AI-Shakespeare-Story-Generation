@@ -1,12 +1,13 @@
 from flask import Flask, request, render_template, jsonify
 from templates import *
-
+from run import *
+from deepai import *
 
 app = Flask(__name__)
 
 def inputStory(text1): 
-    #send text1 to the method that will run the ai model
-    #return the output of the model
+   #return run(text1) 
+   return deepAi(text1)
 
 @app.route('/')
 def home():

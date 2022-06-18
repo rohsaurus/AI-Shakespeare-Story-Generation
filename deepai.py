@@ -1,6 +1,5 @@
 import requests
-
-while True:
+def deepAi(userInput):
     userInput = input("Enter some starter text here for the model to generate the rest of the story\n")
 
 
